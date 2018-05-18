@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function () {
+    var selectText = $.trim($(".mySelect option:selected").text());
+        if(selectText === "All"){
+          $("#search").hide();
+          $("#filter").hide();
+        }
+        else{
+          $("#search").show();
+          $("#filter").show();
+  }
+      });
+  </script>
+</head>
+
+<body>
+  <div class="jumbotron">
+    <h1 class='head'>UFO Sightings</h1>
+    <p class='head'>The official listing of UFO sighitings around the globe!!!</p>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+        <select class="mySelect">
+            <option id="all" value="all">All</option>
+            <option id="datetime" value="datetime">Datetime</option>
+            <option id="datetime" value="city">City</option>
+            <option id="state" value="state">State</option>
+            <option id="country" value="country">Country</option>
+            <option id="shape" value="shape">Shape</option>
+        </select>
+          <input type="text" class="form-control" id="filter" placeholder="Enter filter data here">
+          <a id="search" class="btn btn-default">Search</a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <table id="ufoTable" class="table table-striped bordered">
+          <thead>
+            <tr>
+              <th>Datetime</th>
+              <th>City</th>
+              <th>State</th>
+              <th>Country</th>
+              <th>Shape</th>
+              <th>Duration (Minutes)</th>
+              <th>Comments</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="text-align:center">
+        <a href="#" class="pagination" id="previous" >Previous</a>
+        <a href="#" class="pagination" id="next" >Next</a>
+      </div>
+  </div>
+  <script type="text/javascript">
+    $( ".mySelect" ).change(function() {
+      var selectText = $.trim($(".mySelect option:selected").text());
+        if(selectText === "All"){
+          $("#search").hide();
+          $("#filter").hide();
+        }
+        else{
+          $("#search").show();
+          $("#filter").show();
+  }
+      });
+    </script>
+  
+
+<script src="js/dataPart.js" type="text/javascript"></script>
+<script src="index.js" type="text/javascript"></script>
+
+</body>
+
+</html>

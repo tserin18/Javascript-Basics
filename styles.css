@@ -1,0 +1,13 @@
+.form-control {
+  display: inline-block;
+  width: 250px;
+  margin-top: 50px;
+}
+
+.head {
+  text-align: center;
+}
+
+.jumbotron {
+  background-color: #47d4c1;
+}
